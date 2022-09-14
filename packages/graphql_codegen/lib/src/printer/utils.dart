@@ -175,6 +175,9 @@ class NamePrinter {
 
   String printKeywordSafe(String name) =>
       _keywords.contains(name) ? "\$${name}" : name;
+  
+  String printEnumCaseNameSafe(String name) =>
+      _keywords.contains(name) ? "\$${name}" : name;
 
   String printEnumValueName(NameNode name) => printKeywordSafe(name.value);
 

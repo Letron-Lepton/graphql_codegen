@@ -8,7 +8,8 @@ List<Spec> printEnum(PrintContext<ContextEnum> context) {
   final typeDef = context.context.currentType;
   final values = {
     for (final v in typeDef.values)
-      v.name.value: context.namePrinter.printEnumValueName(v.name),
+      context.namePrinter.printEnumCaseNameSafe(v.name.value):
+          context.namePrinter.printEnumValueName(v.name),
     kUnknowkEnumValue: kUnknowkEnumValue
   };
   final className = context.namePrinter.printClassName(context.path);
